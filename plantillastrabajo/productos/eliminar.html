@@ -1,0 +1,15 @@
+{% extends 'plantillabase.html' %}
+
+{% block titulo %}Eliminar producto{% endblock %}
+
+{% block contenido %}
+<h2>Elimintar producto {{ id }}</h2>
+<p>Seguro que quieres eliminar el producto<strong>{{ producto.nombre }}</strong>?</p>
+
+<form method="POSt">
+   {% csrf_token %}
+   <button type="submit" class="btn btn-danger">Si, eliminar</button>
+   <a href="{% url 'listar_productos' %}" class="btn btn-secondary">Cancelar</a>
+
+</form>
+{% endblock %}

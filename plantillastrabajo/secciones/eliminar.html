@@ -1,0 +1,15 @@
+{% extends 'plantillabase.html' %}
+
+{% block titulo %}Eliminar secciones{% endblock %}
+
+{% block contenido %}
+<h2>Elimintar seccion {{ id }}</h2>
+<p>Seguro que quieres eliminar la seccion<strong>{{ seccion.nombre }}</strong>?</p>
+
+<form method="POST">
+   {% csrf_token %}
+   <button type="submit" class="btn btn-danger">Si, eliminar</button>
+   <a href="{% url 'listar_secciones' %}" class="btn btn-secondary">Cancelar</a>
+
+</form>
+{% endblock %}

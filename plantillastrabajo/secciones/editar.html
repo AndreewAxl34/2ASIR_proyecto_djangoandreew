@@ -1,0 +1,22 @@
+{% extends 'plantillabase.html' %}
+
+{% block titulo %}Editar Seccion{% endblock %}
+
+{% block contenido %}
+<h2>Editar seccion</h2>
+<p>Aqui ira el formulario</p>
+
+<form method="POST">
+   {% csrf_token %}
+
+   <label>Nombre: </label>
+   <div class="col-5 offset-3">
+   <input type="text" name="nombre" class="form-control" 
+          value="{{ seccion.nombre }}" required>
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <a href="{% url 'listar_secciones' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

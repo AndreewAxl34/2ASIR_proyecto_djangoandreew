@@ -1,0 +1,52 @@
+{% extends 'plantillabase.html' %}
+
+{% block titulo %}Editar producto{% endblock %}
+
+{% block contenido %}
+<h2 >Editar producto</h2>
+<p>Aqui ira el formulario</p>
+
+<form method="POST">
+   {% csrf_token %}
+
+   <div class="col-5 offset-3">
+    <label>Nombre: </label>
+     <input type="text" name="nombre" class="form-control" 
+            value="{{ producto.nombre }}" required>
+   </div>
+
+   <div class="col-5 offset-3">
+   <label>Precio: </label>
+     <input type="number" step="0.01" name="precio" class="form-control"
+           value="{{ producto.precio }}" required>
+   </div>
+
+   <div class="col-5 offset-3">
+   <label>Stock: </label>
+   <input type="number" name="stock" class="form-control" 
+          value="{{ producto.stock }}" required>
+   </div>
+   
+   <div class="col-5 offset-3">
+    <label>Descripcion: </label>
+   <input type="text" name="descripcion" class="form-control" 
+          value="{{ producto.descripcion }}">
+   </div>
+
+    <div class="col-5 offset-3">
+    <label>Seccion: </label>
+      <select name="seccion" class="form-control" required>
+          {% for s in secciones %}
+            <option value="{{ s.id }}" 
+                {% if s.id == producto.seccion.id %}selected{% endif %}>
+                {{ s.nombre }}
+            </option>
+          {% endfor %}
+      </select>
+    </div>
+    
+    <br>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <a href="{% url 'listar_productos' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

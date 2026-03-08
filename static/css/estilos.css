@@ -1,0 +1,124 @@
+/* Reset general */
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+/* Fondo general */
+body {
+    background-color: #0c0c0c;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Cabecera */
+header {
+    background-color: #104d757e;
+    padding: 20px;
+    text-align: center;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    box-shadow: 0 0 10px #c2c0c2, inset 0 0 5px #c2c0c2;
+    border-radius: 20px;
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #8a218a;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px #c2c0c2, inset 0 0 5px #c2c0c2;
+    border-radius: 20px;
+}
+
+/* Botones */
+.boton {
+    background: #000;
+    color: #ff00ff;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 10px #ff00ff, inset 0 0 5px #ff00ff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+
+/* Contenedor general */
+.cuerpo .row{
+    margin-left: 10px;
+    margin-right: 10px;
+    min-height: 50vh;
+}
+
+/* Menú lateral */
+.lateral {
+    border: 2px solid var(--neon-cyan);
+    background: rgba(204, 186, 186, 0.1);
+    padding: 20px;
+    box-shadow: 0 0 10px #c2c0c2, inset 0 0 5px #c2c0c2;
+    /* Altura correcta */
+   height: auto;
+   width: 20%;
+
+    /* NO tocar el ancho: Bootstrap controla col-3 */
+    position: relative;
+
+    text-align: center;
+    border-radius: 20px;
+}
+/* Boton secundario dentor de menu lateral*/
+
+.boton_secundario {
+    background: #000;
+    color: #ff00ff;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 10px #ff00ff, inset 0 0 5px #ff00ff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 20px;
+    display: block;   
+    margin: 9px ; 
+}
+
+/* Contenido principal */
+.contenido {
+    background-color: #325f2b;
+    padding: 50px;
+
+    /* Bootstrap controla el ancho con col-9 */
+    width: 1280px;
+    min-height: 80%;
+    height: auto;
+
+    padding-bottom: 40px;
+    
+    text-align: center;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    box-shadow: 0 0 10px #c2c0c2, inset 0 0 5px #c2c0c2;
+
+    margin-left: -6px;
+    border-radius: 20px;
+}
+
+/* Pie de página */
+footer {
+    background-color: #01FFFF;
+    padding: 10px;
+    text-align: center;
+    color: #000;
+    text-shadow: 0 0 5px #000, 0 0 10px #546363;
+    box-shadow: 0 0 10px #c2c0c2, inset 0 0 5px #c2c0c2;
+    border-radius: 20px;
+}
+
+/* Tablas */
+table {
+    margin-right: 20px;
+}

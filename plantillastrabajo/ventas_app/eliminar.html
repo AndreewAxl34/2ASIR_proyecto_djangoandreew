@@ -1,0 +1,22 @@
+{% extends 'plantillabase.html' %}
+
+{% block titulo %}Eliminar venta{% endblock %}
+
+{% block contenido %}
+<h2>Elimintar ventas</h2>
+<p>Seguro que quieres eliminar la cliente #{{ venta.nombre }} de {{ venta.cliente.nombre }}?</p>
+
+<ul>
+    <li>Producto: {{ venta.producto.nombre }}</li>
+    <li>Precio: {{ venta.precio_producto }}</li>
+    <li>Cantidad: {{ venta.cantidad }}</li>
+    <li>Fecha: {{ venta.fecha }}</li>
+</ul>
+
+<form method="POST">
+   {% csrf_token %}
+   <button type="submit" class="btn btn-danger">Si, eliminar</button>
+   <a href="{% url 'listar_ventas' %}" class="btn btn-secondary">Cancelar</a>
+
+</form>
+{% endblock %}

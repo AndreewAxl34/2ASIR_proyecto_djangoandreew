@@ -1,0 +1,20 @@
+ <!--Aqui indicamos que tendra relacion ocn la plantilla principal---->
+ {% extends 'plantillabase.html' %}
+ <!--Este bloque nos servira para relacionarlo con titulo de la plantilla prncipal--->
+ {% block titulo %}Inico{% endblock %}
+ <!--Este bloque nos servira para relacionarlo con el contendio de la plantilla prncipal--->
+ {% block contenido %}
+    <h2>Estas en la plantalla de incio</h2>
+
+    <p>Este es el trabajo de DJANGO que ha enviado alberto</p><br>
+    <p>Consiste en una pagina web de informatica, para pedir su producto, y demas</p><br>
+    <p>Las partes que tienen estan relacionadas con</p><br>
+    <li>
+        <ul>1.-La pagina de inicio</ul>
+        <ul>1.-Productos</ul>
+        <ul>2.-Secciones</ul>
+        <ul>3.-Clientes</ul>
+        <ul>4.-Ventas</ul>
+    </li>
+
+ {% endblock %}
