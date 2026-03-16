@@ -1,0 +1,15 @@
+{% extends 'plantillabase.html' %}
+
+{% block titulo %}Eliminar clientes{% endblock %}
+
+{% block contenido %}
+<h2>Elimintar cliente {{ id }}</h2>
+<p>Seguro que quieres eliminar la administracion<strong>{{ administracion.nombre }}</strong>?</p>
+
+<form method="POST">
+   {% csrf_token %}
+   <button type="submit" class="btn btn-danger">Si, eliminar</button>
+   <a href="{% url 'listar_administraciones' %}" class="btn btn-secondary">Cancelar</a>
+
+</form>
+{% endblock %}

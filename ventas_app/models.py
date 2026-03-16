@@ -9,10 +9,10 @@ class Venta(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     precio_producto = models.DecimalField(max_digits=10, decimal_places=2)
     cantidad = models.PositiveIntegerField()
-    fecha = models.DateTimeField(auto_now=True)
+    fecha = models.DateField()
 
-    class Meta:
-        ordering = ['-fecha']
+   # class Meta:
+   #     ordering = ['-fecha']
 
     def __str__(self):
         return f"Venta #{self.id} - {self.cliente.nombre}"

@@ -1,0 +1,65 @@
+{% extends 'plantillabase.html' %}
+
+{% block titulo %}Editar administración{% endblock %}
+
+{% block contenido %}
+<h2 class="mt-3">Editar administración</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label class="mt-2">Nombre:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="nombre" class="form-control"
+               value="{{ administracion.nombre }}" required>
+    </div>
+
+    <label class="mt-3">Sector industrial:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="sector_industrial" class="form-control"
+               value="{{ administracion.sector_industrial }}" required>
+    </div>
+
+    <label class="mt-3">Domicilio:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="domicilio" class="form-control"
+               value="{{ administracion.domicilio }}">
+    </div>
+
+    <label class="mt-3">Teléfono:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="telefono" class="form-control"
+               value="{{ administracion.telefono }}">
+    </div>
+
+    <label class="mt-3">Número de empleados:</label>
+    <div class="col-5 offset-3">
+        <input type="number" name="numero_empleados" class="form-control"
+               value="{{ administracion.numero_empleados }}">
+    </div>
+
+    <label class="mt-3">Estructura organizativa:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="estructura_organizativa" class="form-control"
+               value="{{ administracion.estructura_organizativa }}">
+    </div>
+
+    <label class="mt-3">Tipo de IVA:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="tipo_iva" class="form-control"
+               value="{{ administracion.tipo_iva }}">
+        <small class="text-muted">Ejemplo: 21 o 21%</small>
+    </div>
+
+    <label class="mt-3">Socios:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="socios" class="form-control"
+               value="{{ administracion.socios }}">
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <a href="{% url 'listar_administraciones' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+
+{% endblock %}

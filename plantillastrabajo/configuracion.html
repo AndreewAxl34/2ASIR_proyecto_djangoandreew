@@ -1,0 +1,65 @@
+{% extends 'plantillabase.html' %}
+
+{% block titulo %}Configuracion, de la administracion de la empresa{% endblock %}
+
+{% block contenido %}
+<h2 class="mt-3">Configuracion, de la administracion de la empresa</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label class="mt-2">Nombre:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="nombre" class="form-control"
+               value="{{ config.nombre }}" required>
+    </div>
+
+    <label class="mt-3">Sector industrial:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="sector_industrial" class="form-control"
+               value="{{ config.sector_industrial }}" required>
+    </div>
+
+    <label class="mt-3">Domicilio:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="domicilio" class="form-control"
+               value="{{ config.domicilio }}">
+    </div>
+
+    <label class="mt-3">Teléfono:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="telefono" class="form-control"
+               value="{{ config.telefono }}">
+    </div>
+
+    <label class="mt-3">Número de empleados:</label>
+    <div class="col-5 offset-3">
+        <input type="number" name="numero_empleados" class="form-control"
+               value="{{ config.numero_empleados }}">
+    </div>
+
+    <label class="mt-3">Estructura organizativa:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="estructura_organizativa" class="form-control"
+               value="{{ config.estructura_organizativa }}">
+    </div>
+
+    <label class="mt-3">Tipo de IVA:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="tipo_iva" class="form-control"
+               value="{{ config.tipo_iva }}">
+        <small class="text-muted">Ejemplo: 21 o 21%</small>
+    </div>
+
+    <label class="mt-3">Socios:</label>
+    <div class="col-5 offset-3">
+        <input type="text" name="socios" class="form-control"
+               value="{{ config.socios }}">
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <a href="/" class="btn btn-secondary">Cancelar</a>
+</form>
+
+{% endblock %}

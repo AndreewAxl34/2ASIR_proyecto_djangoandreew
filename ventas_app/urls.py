@@ -19,6 +19,7 @@ from . import views
 urlpatterns = [
     path('', views.listar_ventas, name="listar_ventas"),
     path('crear/', views.crear_ventas, name="crear_ventas"),
+    path('editar/<int:id>', views.editar_ventas, name="editar_ventas"),
     path('eliminar/<int:id>', views.eliminar_ventas, name="eliminar_ventas"),
 ]
 

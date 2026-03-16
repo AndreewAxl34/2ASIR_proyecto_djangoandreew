@@ -11,7 +11,7 @@ class Cliente(models.Model):
     actualizado=models.DateTimeField(auto_now=True)
 
     class Meta:
-     ordering = ['nombre'] # Se encarga de ordenar nombres por el alfabeto
+  #      ordering = ['nombre'] # Se encarga de ordenar nombres por el alfabeto
      verbose_name = "Cliente" # Nombre en el admin
      verbose_name_plural = "Clientes" # Nombre prural en el admin
 

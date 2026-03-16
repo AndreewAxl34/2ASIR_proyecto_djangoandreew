@@ -1,0 +1,57 @@
+{% extends 'plantillabase.html' %}
+
+{% block titulo %}Listado de Administracion{% endblock %}
+
+{% block contenido %}
+<h2>Listado de Administracion</h2>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-11 col-md-10 mx-auto">
+
+        <a href="{% url 'crear_administraciones' %}" class="btn btn-success mb-3">Crear administración</a>
+
+        <table class="table table-striped table-bordered text-center align-middle">
+          <thead class="table-dark">
+             <tr>
+               <th>Nombre</th>
+               <th>Sector industrial</th>
+               <th>Domicilio</th>
+               <th>Teléfono</th>
+               <th>Número empleados</th>
+               <th>Estructura organizativa</th>
+               <th>Tipo IVA</th>
+               <th>Socios</th>
+               <th>Acciones</th>
+             </tr>
+          </thead>
+
+          <tbody>
+             {% for ad in administraciones %}
+            <tr>
+                <td>{{ ad.nombre }}</td>
+                <td>{{ ad.sector_industrial }}</td>
+                <td>{{ ad.domicilio }}</td>
+                <td>{{ ad.telefono }}</td>
+                <td>{{ ad.numero_empleados }}</td>
+                <td>{{ ad.estructura_organizativa }}</td>
+                <td>{{ ad.tipo_iva }}</td>
+                <td>{{ ad.socios }}</td>
+
+                <td>
+                   <a href="{% url 'editar_administraciones' ad.id %}" class="btn btn-primary btn-sm">Editar</a>
+                   <a href="{% url 'eliminar_administraciones' ad.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+             {% empty %}
+             <tr>
+                <td colspan="9" class="text-center">No hay administraciones registradas</td>
+             </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+     </div>
+  </div>
+</div>
+{% endblock %}

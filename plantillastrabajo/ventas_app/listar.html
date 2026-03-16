@@ -8,9 +8,40 @@
 <div class="container">
   <div class="row justify-content-center ">
     <div class="col-11 col-md-10 mx-auto">
-        <a href="{% url 'crear_ventas' %}" class="btn btn-success mb-3">Crear venta</a>
 
-        <table class="table table-striped table-bordered text-centar align-middle ">
+    <!----Boton para crear venta-->
+        <a href="{% url 'crear_ventas' %}" class="btn btn-success mb-3">Crear venta</a>
+    <!----Final del boton-->
+    <!---Formulario apra el filtrado por fechas-->
+    <form method="GET" class="mb-4">
+      <div class="d-flex align-items-end gap-2" style="max-width: 600px;">
+         <div>
+            <label>Desde: </labe>
+              <input type="date" name="desde" class="form-control" value="{{ request.GET.desde }}">
+         </div>
+
+        <div>
+            <label>Hasta: </labe>
+              <input type="date" name="hasta" class="form-control" value="{{ request.GET.hasta }}">
+         </div>
+
+        <div class="btn btn-success mb-2">
+            <button type="submit" class="btn btn-success mb-1">Filtrar</button>
+        </div>
+
+        <div class="btn btn-success mb-2 col-4">
+            <a href="{% url 'listar_ventas' %}" class="btn btn-success">Quitar filtros</a>
+        </div>
+
+      </div>
+    </form>
+    <!--Cantidad de ventas filtradas--->
+    {% if desde or hasta %}
+    <p><strong>Cantidad de ventas encontradas: {{ total_ventas }}</strong></p>
+    {% endif %}
+    <!---Final del formulario-->
+   <!---tabla de vnetas--->
+    <table class="table table-striped table-bordered text-centar align-middle ">
           <thead class="table-dark">
              <tr>
                <th>Codigo</th>
@@ -34,7 +65,8 @@
                 <td>{{ venta.fecha }}</td>
                 <td>{{ venta.total }}</td>
                 <td>
-                   <a href="{% url 'eliminar_ventas' venta.id %}" class="btn btn-danger mb-3">Eliminar venta</a>
+                   <a href="{% url 'editar_ventas' venta.id %}" class="btn btn-warning">Editar</a>
+                   <a href="{% url 'eliminar_ventas' venta.id %}" class="btn btn-warning">Eliminar</a>
                  </td>
              </tr>
              {% empty %}
